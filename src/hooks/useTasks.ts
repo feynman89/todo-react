@@ -1,7 +1,5 @@
 import { TaskContext } from './../context/TaskContext/index';
 import { useCallback, useMemo, useContext } from 'react'
-import { DisplayState } from '../enums';
-
 
 const useTasks = () => {
   const { tasks, setTasks, displayState, setDisplayState } = useContext(TaskContext)
@@ -9,9 +7,9 @@ const useTasks = () => {
   const completedTasks = useMemo<ITask[]>(() => (tasks.filter(task => task.completed)), [tasks])
   const displayTasks = useMemo<ITask[]>(() => {
     switch(displayState) {
-      case DisplayState.Active:
+      case 'Active':
         return activeTasks
-      case DisplayState.Completed:
+      case 'Completed':
         return completedTasks
       default:
         return tasks
@@ -38,15 +36,16 @@ const useTasks = () => {
   
   const allCompleted = useCallback(() => setTasks(prev => 
     prev.map(task => completedTasks.length === tasks.length ? { ...task, completed: !task.completed } : 
-      { ...task, completed: true })), [])
+      { ...task, completed: true })), [completedTasks, tasks])
   
-  const changeDisplayState = useCallback((displayState: DisplayState) => (setDisplayState(displayState)), [])
+  const changeDisplayState = useCallback((displayState: IDisplay) => (setDisplayState(displayState)), [])
 
   return {
     tasks,
     activeTasks,
     completedTasks,
     displayTasks,
+    displayState,
     add,
     toggle,
     remove,

@@ -1,0 +1,33 @@
+@import '../../stylesheets/variables.scss';
+
+.buttons-group {
+  padding-top: 5px;
+  padding-bottom: 12px;
+  margin-left: 16px;
+  font-size: 18px;
+
+  &__span {
+    margin-right: 8%;
+  }
+
+  &__buttons-group {
+    display: inline-block;
+  }
+  &__button {
+    font-size: 15px;
+    margin-left: 10px;
+    margin-right: 10px;
+    border: none;
+    border-radius: 8px;
+
+    &_active {
+      border: 2px solid $active_button;
+      border-radius: 8px;
+    }
+    
+    &_hide {
+      display: none;
+    }
+  }
+  
+}

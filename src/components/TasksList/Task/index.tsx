@@ -1,9 +1,15 @@
-import React, { useCallback, useEffect, useRef, useState } from 'react'
+import React, { useEffect, useRef, useState } from 'react'
 import { useTasks } from '../../../hooks'
+import block from 'bem-clsx'
+import './styles.scss'
+import { IconButton, ListItem, Checkbox } from '@material-ui/core'
+import DeleteIcon from '@material-ui/icons/Delete'
 
 interface IProps {
   task: ITask,
 }
+
+const tlt = block('tasks-list-task')
 
 const Task: React.FC<IProps> = ({ task }) => {
   const { toggle, remove, edit } = useTasks()
@@ -31,14 +37,14 @@ const Task: React.FC<IProps> = ({ task }) => {
   }
 
   return (
-    <li>
-      <input 
-        type='checkbox'
+    <ListItem className={tlt()}>
+      <Checkbox
         checked={task.completed}
         onChange={() => toggle(task.id)}
       />
-      <label onDoubleClick={doubleClickHandler}>{ task.title }</label>
+      <label className={tlt('label', {hide: editState })} onDoubleClick={doubleClickHandler}>{ task.title }</label>
       <input
+        className={tlt('input', { hide: !editState })}
         type='edit'
         ref={inputRef}
         onBlur={lostFocusHandler}
@@ -46,8 +52,10 @@ const Task: React.FC<IProps> = ({ task }) => {
         onChange={changeHandler}
         onKeyPress={keyPressHandler}
       />
-      <button onClick={() => remove(task.id)}></button>
-    </li>
+      <IconButton onClick={() => remove(task.id)}>
+        <DeleteIcon fontSize='small' />
+      </IconButton>
+    </ListItem>
   )
 }
 

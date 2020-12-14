@@ -1,0 +1,17 @@
+@import '../../stylesheets/variables.scss';
+
+.input {
+  display: block;
+  padding: 16px;
+  border-bottom: 2px solid  $line_border;
+
+  &__text-field {
+    display: inline-block;
+    width: 91%;
+  }
+
+  &__checkbox {
+    margin-top: auto;
+    margin-bottom: auto;
+  }
+}

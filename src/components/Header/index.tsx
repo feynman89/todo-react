@@ -1,5 +1,12 @@
 import React from 'react'
+import block from 'bem-clsx'
+import './styles.scss'
 
-const Header: React.FC = () => (<h1>ToDo List</h1>)
+const h = block('header')
+
+const Header: React.FC = () => (
+  <div className={'header'}>
+    todos
+  </div>)
 
 export default Header

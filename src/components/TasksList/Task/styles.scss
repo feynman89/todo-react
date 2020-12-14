@@ -1,0 +1,31 @@
+@import '../../../stylesheets/variables.scss';
+
+.tasks-list-task {
+  
+  border-bottom: 2px solid  $line_border;
+  font-size: 24px;
+
+  
+  &__label {
+    display: inline-block;
+    width: 100%;
+    border: none;
+    //font-size: 24px;
+
+    &_hide {
+      display: none;
+    }
+  }
+
+  &__input {
+    display: inline-block;
+    width: 100%;
+    border: none;
+    font-size: 24px;
+    &_hide {
+      display: none;
+    }
+  }
+
+
+}

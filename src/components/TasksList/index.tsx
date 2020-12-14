@@ -1,16 +1,21 @@
 import React from 'react'
 import { useTasks } from '../../hooks'
 import Task from './Task'
+import block from 'bem-clsx'
+import './styles.scss'
+import { List } from '@material-ui/core'
+
+const tl = block('tasks-list')
 
 const TasksList: React.FC = () => {
   const { displayTasks } = useTasks()
 
   return (
-    <>
-      <ul>
+    <div className={tl()}>
+      <List className={tl('list')}>
         { displayTasks.map(task => <Task key={task.id} task={task}/>) }
-      </ul>
-    </>
+      </List>
+    </div>
   )
 }
 

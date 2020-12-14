@@ -3,3 +3,5 @@ declare interface ITask {
   title: string;
   completed: boolean;
 }
+
+declare type IDisplay =  'All' | 'Active' | 'Completed'
