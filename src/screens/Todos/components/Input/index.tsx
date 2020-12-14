@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import { useTasks } from '../../hooks'
+import { useTasks } from '../../../../hooks'
 import { Checkbox, TextField } from '@material-ui/core'
 import block from 'bem-clsx'
 import './styles.scss'

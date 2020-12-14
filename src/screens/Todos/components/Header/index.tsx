@@ -5,7 +5,7 @@ import './styles.scss'
 const h = block('header')
 
 const Header: React.FC = () => (
-  <div className={'header'}>
+  <div className={h()}>
     todos
   </div>)
 

@@ -1,5 +1,5 @@
 import React from 'react'
-import { useTasks } from '../../hooks'
+import { useTasks } from '../../../../hooks'
 import Task from './Task'
 import block from 'bem-clsx'
 import './styles.scss'
