@@ -14,9 +14,8 @@ const ButtonsGroup: React.FC = () => {
         <button className={bg('button', {active: displayState === 'All'})} onClick={() => changeDisplayState('All')}>All</button>
         <button className={bg('button', {active: displayState === 'Active'})} onClick={() => changeDisplayState('Active')}>Active</button>
         <button className={bg('button', {active: displayState === 'Completed'})} onClick={() => changeDisplayState('Completed')}>Completed</button>
-        <button className={bg('button', { hide: completedTasks.length === 0})} onClick={removeComplited}>Clear completed</button>
+        <button className={bg('button', {hide: completedTasks.length === 0})} onClick={removeComplited}>Clear completed</button>
       </div>
-
     </div>
   )
 }
