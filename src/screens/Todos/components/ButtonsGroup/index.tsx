@@ -1,6 +1,7 @@
 import React from 'react'
-import { useTasks } from '../../../../hooks'
-import block from 'bem-clsx'
+import { useTasks } from 'hooks'
+import block from 'bem-cn'
+import Button from './components/Button'
 import './styles.scss'
 
 const bg = block('buttons-group')
@@ -9,13 +10,31 @@ const ButtonsGroup: React.FC = () => {
   const { activeTasks, completedTasks, displayState, removeComplited, changeDisplayState } = useTasks()
   return (
     <div className={bg()}>
-      <span className={bg('span')}>{ activeTasks.length } items left</span>
-      <div className={bg('buttons-group')}>
-        <button className={bg('button', {active: displayState === 'All'})} onClick={() => changeDisplayState('All')}>All</button>
-        <button className={bg('button', {active: displayState === 'Active'})} onClick={() => changeDisplayState('Active')}>Active</button>
-        <button className={bg('button', {active: displayState === 'Completed'})} onClick={() => changeDisplayState('Completed')}>Completed</button>
-        <button className={bg('button', {hide: completedTasks.length === 0})} onClick={removeComplited}>Clear completed</button>
-      </div>
+      <span className={bg('counter')}>{ activeTasks.length } items left</span>
+      <Button
+        active={displayState === 'All'}
+        onClick={() => changeDisplayState('All')}
+      >
+        All
+      </Button>
+      <Button
+        active={displayState === 'Active'}
+        onClick={() => changeDisplayState('Active')}
+      >
+        Active
+      </Button>
+      <Button
+        active={displayState === 'Completed'}
+        onClick={() => changeDisplayState('Completed')}
+      >
+        Completed
+      </Button>
+      <Button
+        visible={completedTasks.length !== 0}
+        onClick={removeComplited}
+      >
+        Clear completed
+      </Button>
     </div>
   )
 }

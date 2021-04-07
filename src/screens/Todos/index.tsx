@@ -1,6 +1,6 @@
 import React from 'react'
 import { Header, Input, TasksList, ButtonsGroup } from './components'
-import block from 'bem-clsx'
+import block from 'bem-cn'
 import './styles.scss'
 
 const t = block('todos')

@@ -1,9 +1,9 @@
 import React, { useEffect, useRef, useState } from 'react'
-import { useTasks } from '../../../../../hooks'
-import block from 'bem-clsx'
-import './styles.scss'
+import block from 'bem-cn'
+import { useTasks } from 'hooks'
 import { IconButton, ListItem, Checkbox } from '@material-ui/core'
 import DeleteIcon from '@material-ui/icons/Delete'
+import './styles.scss'
 
 interface IProps {
   task: ITask,

@@ -1,5 +1,5 @@
 import React from 'react'
-import block from 'bem-clsx'
+import block from 'bem-cn'
 import './styles.scss'
 
 const h = block('header')

@@ -1,7 +1,7 @@
 import React from 'react';
 import { Todos } from './screens'
 import { TaskProvider } from './context';
-import block from 'bem-clsx'
+import block from 'bem-cn'
 import './App.scss'
 
 const a = block('container')

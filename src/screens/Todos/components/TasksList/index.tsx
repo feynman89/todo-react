@@ -1,7 +1,7 @@
 import React from 'react'
-import { useTasks } from '../../../../hooks'
+import { useTasks } from 'hooks'
 import Task from './Task'
-import block from 'bem-clsx'
+import block from 'bem-cn'
 import './styles.scss'
 import { List } from '@material-ui/core'
 

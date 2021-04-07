@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
-import { useTasks } from '../../../../hooks'
+import { useTasks } from 'hooks'
 import { Checkbox, TextField } from '@material-ui/core'
-import block from 'bem-clsx'
+import block from 'bem-cn'
 import './styles.scss'
 
 const Input: React.FC = () => {
@@ -27,7 +27,7 @@ const Input: React.FC = () => {
         checked={tasks.length > 0 && completedTasks.length === tasks.length}
       />
       <TextField
-        className={i('text-field')}
+        className={i('text-input').toString()}
         variant='outlined'
         size='small'
         value={title}
